@@ -12,3 +12,9 @@ function computerPlay(){
 
     return turn;
 }
+
+
+function playRoun(player, computer){
+    let player = player.toLowerCase();
+    
+}
