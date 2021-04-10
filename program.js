@@ -1,3 +1,9 @@
+let player_count = 0;
+let computer_count = 0;
+
+
+// Computer turn
+
 function computerPlay(){
     let number = Math.floor(Math.random() * 3);
     let turn = "";
@@ -14,11 +20,12 @@ function computerPlay(){
 }
 
 
+// Round checking for winner
+
 function playRound(playerSelection, computerSelection){
     let player = playerSelection.toLowerCase();
     let computer = computerSelection.toLowerCase();
-    let player_count = 0;
-    let computer_count = 0;
+    
     let msg = "";
     
     if (player === "paper"){
@@ -61,17 +68,21 @@ function playRound(playerSelection, computerSelection){
     } else {
         msg = "Your input is wrong.(add rock/paper/scissors)";
     }
+    
     return msg;
     
 }
 
-let user_prompt = prompt("Enter your turn: ", "Rock");
-console.log(playRound(user_prompt, computerPlay()));
+// Playing until 5 rounds expired
 
-// function game(playgame){
-//     for(let i = 0; i < 5; i++){
-//         playgame;
-//     }
-// }
+function game(){
+    let user_prompt;
 
-// console.log(game(playRound()));
+    for(let i = 0; i < 5; i++){
+        user_prompt = prompt("Enter your turn!");
+        console.log(playRound(user_prompt, computerPlay()));
+        console.log(`Player: ${player_count} Computer: ${computer_count}`);
+    }
+}
+
+game();
