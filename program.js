@@ -14,7 +14,41 @@ function computerPlay(){
 }
 
 
-function playRoun(player, computer){
-    let player = player.toLowerCase();
+function playRound(playerSelection, computerSelection){
+    let player = playerSelection.toLowerCase();
+    let computer = computerSelection.toLowerCase();
+    let msg = "";
+    
+    if (player === "paper"){
+        if (computer === "rock"){
+            msg = "You Won!Paper beats Rock.";
+        }else if (computer === "paper"){
+            msg = "It's Draw!Paper can't beat Paper."
+        }else{
+            msg = "You Lose!Scissors beats Paper.";
+        }
+    }else if(player === "rock"){
+
+        if (computer === "rock"){
+            msg = "It's Draw! Rock can't beat Rock!";
+            
+        }else if (computer === "paper"){
+            msg = "You Lose!Paper beats Rock."
+        }else{
+            msg = "You Won!Rock beats Scissors.";
+        }
+
+    }else if(player === "scissors"){
+
+        if(computer === "rock"){
+            msg = "You Lost! Rock beats Scissors!";
+        }else if(computer === "paper"){
+            msg = "You Won! Scissors beats Paper.";
+        }else{
+            msg = "It's Draw! Scissors can't beat Scissors!";
+        }
+
+    }
+    return msg;
     
 }
