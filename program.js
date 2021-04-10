@@ -48,7 +48,20 @@ function playRound(playerSelection, computerSelection){
             msg = "It's Draw! Scissors can't beat Scissors!";
         }
 
+    } else {
+        msg = "Your input is wrong.(add rock/paper/scissors)";
     }
     return msg;
     
 }
+
+let user_prompt = prompt("Enter your turn: ", "Rock");
+console.log(playRound(user_prompt, computerPlay()));
+
+// function game(playgame){
+//     for(let i = 0; i < 5; i++){
+//         playgame;
+//     }
+// }
+
+// console.log(game(playRound()));
