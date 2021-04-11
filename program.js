@@ -88,6 +88,12 @@ function game(){
         
         
     }
+
+    if (player_count > computer_count){
+        console.log("You won a game!")
+    }else{
+        console.log("Sorry, you lost. Computer won the game!")
+    }
 }
 
 game();
