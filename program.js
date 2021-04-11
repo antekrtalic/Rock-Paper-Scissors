@@ -1,7 +1,5 @@
 let player_count = 0;
 let computer_count = 0;
-
-
 // Computer turn
 
 function computerPlay(){
@@ -33,6 +31,7 @@ function playRound(playerSelection, computerSelection){
         if (computer === "rock"){
             msg = "You Won!Paper beats Rock.";
             player_count += 1;
+            
         }else if (computer === "paper"){
             msg = "It's Draw!Paper can't beat Paper."
         }else{
@@ -48,6 +47,7 @@ function playRound(playerSelection, computerSelection){
         }else if (computer === "paper"){
             msg = "You Lose!Paper beats Rock."
             computer_count += 1;
+            
         }else{
             msg = "You Won!Rock beats Scissors.";
             player_count += 1;
@@ -73,15 +73,20 @@ function playRound(playerSelection, computerSelection){
     
 }
 
+
+
 // Playing until 5 rounds expired
 
 function game(){
     let user_prompt;
+    
 
     for(let i = 0; i < 5; i++){
         user_prompt = prompt("Enter your turn!");
         console.log(playRound(user_prompt, computerPlay()));
         console.log(`Player: ${player_count} Computer: ${computer_count}`);
+        
+        
     }
 }
 
