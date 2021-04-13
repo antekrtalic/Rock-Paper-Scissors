@@ -1,5 +1,6 @@
 let player_count = 0;
 let computer_count = 0;
+let role = "";
 // Computer turn
 
 function computerPlay(){
@@ -77,15 +78,18 @@ function playRound(playerSelection, computerSelection){
 
 // Playing until 5 rounds expired
 
-function game(){
+function game(role){
     let user_prompt;
     
 
     for(let i = 0; i < 5; i++){
-        user_prompt = prompt("Enter your turn!");
-        console.log(playRound(user_prompt, computerPlay()));
-        console.log(`Player: ${player_count} Computer: ${computer_count}`);
-        
+        pickRole(buttons);
+        if (role) {
+            console.log(playRound(role, computerPlay()));
+            console.log(`Player: ${player_count} Computer: ${computer_count}`);
+        }else {
+            console.log("Enter something");
+        }  
         
     }
 
@@ -96,4 +100,22 @@ function game(){
     }
 }
 
-game();
+
+
+const buttons = document.querySelectorAll('button');
+
+function pickRole(buttons){
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            if (button.className === "btn-1"){
+                role = "rock";
+            }else if (button.className === "btn-2"){
+                role = "paper";
+            }else if (button.className === "btn-3"){
+                role = "scissors";
+            }
+
+        });
+    });
+}
+game(role);
