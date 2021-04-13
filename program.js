@@ -79,11 +79,8 @@ function playRound(playerSelection, computerSelection){
 // Playing until 5 rounds expired
 
 function game(role){
-    let user_prompt;
     
-
     for(let i = 0; i < 5; i++){
-        pickRole(buttons);
         if (role) {
             console.log(playRound(role, computerPlay()));
             console.log(`Player: ${player_count} Computer: ${computer_count}`);
@@ -114,8 +111,10 @@ function pickRole(buttons){
             }else if (button.className === "btn-3"){
                 role = "scissors";
             }
-
+            
         });
     });
+    
 }
-game(role);
+pickRole(buttons);
+console.log(role);
