@@ -75,6 +75,12 @@ function playRound(playerSelection, computerSelection){
     } else {
         msg = "Your input is wrong.(add rock/paper/scissors)";
     }
+
+    if (player_count === 5) {
+        return "Player won a game!";
+    }else if (computer_count === 5) {
+        return "Computer won a game!";
+    }
     
     console.log(msg);
     
@@ -84,26 +90,11 @@ function playRound(playerSelection, computerSelection){
 
 // Playing until 5 rounds expired
 
-function game(role){
+function game(role){    
     
-    
-    if (role) {
-        playRound(role, computerPlay());
-        console.log(`Player: ${player_count} Computer: ${computer_count}`);
-    }else {
-        console.log("Enter something");
-    }  
-    
-
-    if ((player_count === 5) && (player_count > computer_count)){
-        console.log("You won a game!")
-    } 
-    if ((computer_count === 5) && (computer_count > player_count)){
-        console.log("Sorry, you lost. Computer won the game!")
-    }
-    if ((player_count === 5) && (computer_count === 5)) {
-        console.log("It's draw! Close!");
-    }
+    playRound(role, computerPlay());
+    console.log(`Player: ${player_count} Computer: ${computer_count}`);
+        
 }
 
 
@@ -121,9 +112,19 @@ function pickRole(buttons){
                 role = "scissors";
             }
             
-            game(role);
+            if (player_count === 5 || computer_count === 5){
+                return "Game is over";
+            }else {
+                game(role);
+            }
+            
+            
         });
+        
     });
-    
+
 }
+
 pickRole(buttons);
+
+
