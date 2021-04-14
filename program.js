@@ -117,12 +117,9 @@ function pickRole(buttons){
             }else {
                 game(role);
             }
-            
-            
         });
         
     });
-
 }
 
 pickRole(buttons);
