@@ -83,6 +83,13 @@ h3 {
 
 /* Result div */
 
+.message {
+    font-family: 'Permanent Marker', cursive;
+    color: #333D79FF;
+    font-size: 24px;
+    margin: 0;
+
+}
 .result {
     display: flex;
     justify-content: center;

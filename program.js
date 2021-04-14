@@ -24,8 +24,18 @@ function computerPlay(){
 function playRound(playerSelection, computerSelection){
     let player = playerSelection.toLowerCase();
     let computer = computerSelection.toLowerCase();
-    
     let msg = "";
+    
+
+    const message_round = document.querySelector('.message');
+    const try_again = document.createElement('button')
+    try_again.setAttribute("class","try_again");
+    try_again.textContent = "Try Again";
+    try_again.style.fontFamily = 'Permanent Marker, cursive';
+    try_again.style.color = '#333D79FF';
+    try_again.style.backgroundColor = '#FAEBEFFF';
+    try_again.style.fontSize = '24px';
+    
     
     if (player === "paper"){
 
@@ -77,12 +87,26 @@ function playRound(playerSelection, computerSelection){
     }
 
     if (player_count === 5) {
-        return "Player won a game!";
+        msg = "Player won a game!";
+        message_round.after(try_again);
+
+        try_again.addEventListener('click', function() {
+            window.history.back();
+        })
+
     }else if (computer_count === 5) {
-        return "Computer won a game!";
+        msg = "Computer won a game!";
+        message_round.after(try_again);
+        
+        try_again.addEventListener('click', function() {
+            window.history.back();
+        })
     }
     
-    console.log(msg);
+    message_round.textContent = msg;
+    
+    
+    
     
 }
 
@@ -117,7 +141,7 @@ function pickRole(buttons){
             }
             
             if (player_count === 5 || computer_count === 5){
-                return "Game is over";
+                return;
             }else {
                 game(role);
             }
