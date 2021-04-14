@@ -91,9 +91,13 @@ function playRound(playerSelection, computerSelection){
 // Playing until 5 rounds expired
 
 function game(role){    
-    
     playRound(role, computerPlay());
-    console.log(`Player: ${player_count} Computer: ${computer_count}`);
+    
+    const player_wins = document.querySelector('.player_wins');
+    player_wins.textContent = player_count;
+
+    const computer_wins = document.querySelector('.computer_wins');
+    computer_wins.textContent = computer_count;
         
 }
 
@@ -123,5 +127,7 @@ function pickRole(buttons){
 }
 
 pickRole(buttons);
+
+
 
 

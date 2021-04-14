@@ -1,7 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: tan;
+    background-color: #FAEBEFFF;
+    height: 100%;
 }
 
 
@@ -29,11 +30,13 @@ body {
     font-family: 'Gloria Hallelujah', cursive;
     font-family: 'Permanent Marker', cursive;
     font-size: 50px;
+    color: #333D79FF;
 }
 
 .title  p {
     font-family: 'Permanent Marker', cursive;
     font-size: 24px;
+    color: #333D79FF
 }
 
 /* Photos div */
@@ -46,13 +49,16 @@ body {
 
 button, button:hover, button:focus {
     border: none;
-    background: none;
+    background: #FAEBEFFF;
     padding: 0;   
+    
+    overflow: hidden;
 }
 
 button:hover {
     box-shadow: 0 0 50px #39ff14;
 }
+
 
 
 /* Name of roles div */ 
@@ -66,7 +72,7 @@ button:hover {
 h3 {
     font-family: 'Permanent Marker', cursive;
     font-size: 25px;
-    color: #e6ac25;
+    color: #333D79FF;
 }
 
 
@@ -77,5 +83,26 @@ h3 {
     justify-content: center;
     min-width: 100%;
     height: 200px;
-    background-color: blue;
+
 }
+
+.result h3 {
+    text-decoration: underline;
+    font-size: 30px;
+    padding: 5px 15px;
+}
+
+.result p {
+    text-align: center;
+    font-size: 30px;
+    color: #333D79FF;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.player, .computer {
+    min-width: 100px;
+    min-height: 100px;
+    margin: 10px 50px;
+    border: 2px solid red;
+}
+
