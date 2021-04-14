@@ -47,16 +47,21 @@ body {
     justify-content: space-evenly;
 }
 
-button, button:hover, button:focus {
+button {
+    transition: transform .2s;
+}
+
+button, button:focus {
     border: none;
     background: #FAEBEFFF;
     padding: 0;   
-    
     overflow: hidden;
 }
 
 button:hover {
     box-shadow: 0 0 50px #39ff14;
+    border: none;
+    transform: scale(1.1);
 }
 
 
