@@ -33,8 +33,12 @@ function playRound(playerSelection, computerSelection){
     try_again.textContent = "Try Again";
     try_again.style.fontFamily = 'Permanent Marker, cursive';
     try_again.style.color = '#333D79FF';
-    try_again.style.backgroundColor = '#FAEBEFFF';
+    try_again.style.backgroundColor = 'yellow';
     try_again.style.fontSize = '24px';
+    
+    try_again.addEventListener('mouseover', () => {
+        try_again.style.backgroundColor = 'white';
+    });
     
     
     if (player === "paper"){

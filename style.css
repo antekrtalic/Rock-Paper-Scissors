@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #FAEBEFFF;
+    background-color: yellow;
     height: 100%;
 }
 
@@ -51,9 +51,9 @@ button {
     transition: transform .2s;
 }
 
-button, button:focus {
+button, button:focus, button:active {
     border: none;
-    background: #FAEBEFFF;
+    background: yellow;
     padding: 0;   
     overflow: hidden;
 }
