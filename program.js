@@ -86,12 +86,20 @@ function playRound(playerSelection, computerSelection){
         msg = "Your input is wrong.(add rock/paper/scissors)";
     }
 
-    if (player_count === 5) {
+    if (player_count === 5 && computer_count === 5){
+        msg = "Ohhh! It's draw! You almost won.";
+        message_round.after(try_again);
+
+        try_again.addEventListener('click', function() {
+            location.reload();
+        })
+
+    }else if (player_count === 5) {
         msg = "Player won a game!";
         message_round.after(try_again);
 
         try_again.addEventListener('click', function() {
-            window.history.back();
+            location.reload();
         })
 
     }else if (computer_count === 5) {
@@ -99,7 +107,7 @@ function playRound(playerSelection, computerSelection){
         message_round.after(try_again);
         
         try_again.addEventListener('click', function() {
-            window.history.back();
+            location.reload();
         })
     }
     
